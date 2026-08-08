@@ -4,7 +4,7 @@ import Textform from "./compontes/Textform";
 import Navbar from "./compontes/Navbar";
 import Alert from "./compontes/Alert";
 
-// import "./App.css";
+import "./App.css";
 
 export default function App() {
   const [mode, setMode] = useState("light");
@@ -20,16 +20,32 @@ export default function App() {
     }, 3000);
   };
 
-  // toggleMode
-  const toggleMode = () => {
-    if (mode === "light") {
-      setMode("dark");
-      document.body.style.background = "#042743";
-      showAlert("Dark mode has been enabled", "success");
-    } else {
+  const toggleMode = (color) => {
+    if (color === "light") {
       setMode("light");
-      document.body.style.background = "white";
+      document.body.style.backgroundColor = "white";
+      document.title = "TextUtils - Light Mode";
       showAlert("Light mode has been enabled", "success");
+    } else if (color === "dark") {
+      setMode("dark");
+      document.body.style.backgroundColor = "#042743";
+      document.title = "TextUtils - Dark Mode";
+      showAlert("Dark mode has been enabled", "success");
+    } else if (color === "red") {
+      setMode("dark");
+      document.body.style.backgroundColor = "#dc3545";
+      document.title = "TextUtils - Red Mode";
+      showAlert("Red mode has been enabled", "success");
+    } else if (color === "blue") {
+      setMode("dark");
+      document.body.style.backgroundColor = "#0d6efd";
+      document.title = "TextUtils - Blue Mode";
+      showAlert("Blue mode has been enabled", "success");
+    } else if (color === "green") {
+      setMode("dark");
+      document.body.style.backgroundColor = "#198754";
+      document.title = "TextUtils - Green Mode";
+      showAlert("Green mode has been enabled", "success");
     }
   };
 
