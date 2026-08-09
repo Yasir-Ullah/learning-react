@@ -22,22 +22,15 @@ export default function App() {
     }, 3000);
   };
 
-  const toggleMode = (color) => {
-    if (color === "light") {
-      setMode("light");
-      document.body.style.backgroundColor = "white";
-    } else if (color === "dark") {
+  const toggleMode = () => {
+    if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#042743";
-    } else if (color === "red") {
-      setMode("dark");
-      document.body.style.backgroundColor = "#dc3545";
-    } else if (color === "green") {
-      setMode("dark");
-      document.body.style.backgroundColor = "#198754";
-    } else if (color === "blue") {
-      setMode("dark");
-      document.body.style.backgroundColor = "#0d6efd";
+      showAlert("Dark mode has been enabled", "success");
+    } else {
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      showAlert("Light mode has been enabled", "success");
     }
   };
 
@@ -50,12 +43,12 @@ export default function App() {
       <div className="container my-3">
         <Switch>
           <Route exact path="/about">
-            <About />
+            <About mode={mode} />
           </Route>
 
           <Route exact path="/">
             <Textform
-              heading="Enter the text to analyze"
+              heading="Try TextUtils - word conter,remove extra spaces"
               mode={mode}
               showAlert={showAlert}
             />

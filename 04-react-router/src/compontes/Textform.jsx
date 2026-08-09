@@ -30,6 +30,11 @@ function TextForm(props) {
     navigator.clipboard.writeText(text);
     props.showAlert("copyied to clipborad", "success");
   };
+  const handleExtraSpaces = () => {
+    let newText = text.split(/\s+/).join(" ");
+    setText(newText);
+    props.showAlert("Extra spaces removed", "success");
+  };
 
   const [text, setText] = useState("");
 
@@ -45,12 +50,12 @@ function TextForm(props) {
           color: props.mode === "dark" ? "white" : "#042743",
         }}
       >
-        <h1>{props.heading}</h1>
+        <h2>{props.heading}</h2>
         <div className="mb-3">
           <textarea
             onChange={handleChange}
             style={{
-              backgroundColor: props.mode === "dark" ? "grey" : "white",
+              backgroundColor: props.mode === "dark" ? "#13466e" : "white",
               color: props.mode === "dark" ? "white" : "#042743",
             }}
             value={text}
@@ -60,6 +65,7 @@ function TextForm(props) {
           ></textarea>
           <div className="d-flex flex-column flex-md-row gap-2 my-4">
             <button
+              disabled={text.trim().length === 0}
               onClick={handlUpClick}
               type="button"
               className="btn btn-primary  btn-sm"
@@ -67,6 +73,7 @@ function TextForm(props) {
               Convert to Uppercase
             </button>
             <button
+              disabled={text.trim().length === 0}
               onClick={handlLowClick}
               type="button"
               className="btn btn-primary  btn-sm"
@@ -74,6 +81,7 @@ function TextForm(props) {
               Convert to Lowrercase
             </button>
             <button
+              disabled={text.trim().length === 0}
               onClick={handlclearClick}
               type="button"
               className="btn btn-primary  btn-sm"
@@ -81,26 +89,42 @@ function TextForm(props) {
               Clear Text
             </button>
             <button
+              disabled={text.trim().length === 0}
               onClick={handlCopyClick}
               type="button"
               className="btn btn-primary  btn-sm"
             >
               Copy Text
             </button>
+            <button
+              disabled={text.trim().length === 0}
+              className="btn btn-primary mx-1"
+              onClick={handleExtraSpaces}
+            >
+              Remove Extra Spaces
+            </button>
           </div>
         </div>
         <div className="container my-3">
           <h1>Your text summery</h1>
-          <p>
+          {/* issu */}
+          {/* <p>
             {text.split(" ").length} words and {text.length} characters
-          </p>
-          <p>{0.008 * text.split(" ").length} Minutes read</p>
-          <h2>Preview</h2>
+          </p> */}
+
+          {/* issu sol */}
           <p>
-            {text.length > 0
-              ? text
-              : "Enter something in the textbox above to preview it here"}
+            {
+              text.split(" ").filter((element) => {
+                return element.length != 0;
+              }).length
+            }{" "}
+            words and {text.length} characters
           </p>
+
+          <p>{0.008 * text.split(" ").length} Minutes read</p>
+          <h2> Preview</h2>
+          <p>{text.length > 0 ? text : "Nothing to Preview"}</p>
         </div>
       </div>
     </>

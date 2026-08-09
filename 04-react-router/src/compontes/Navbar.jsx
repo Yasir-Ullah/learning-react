@@ -42,38 +42,6 @@ function Navbar(props) {
               }`}
             >
               <input
-                onClick={() => props.toggleMode("green")}
-                className="form-check-input"
-                type="checkbox"
-                id="greenMode"
-              />
-              <label className="form-check-label" htmlFor="greenMode">
-                Green
-              </label>
-            </div>
-
-            <div
-              className={`form-check form-switch text-${
-                props.mode === "light" ? "dark" : "light"
-              }`}
-            >
-              <input
-                onClick={() => props.toggleMode("red")}
-                className="form-check-input"
-                type="checkbox"
-                id="redMode"
-              />
-              <label className="form-check-label" htmlFor="redMode">
-                Red
-              </label>
-            </div>
-
-            <div
-              className={`form-check form-switch text-${
-                props.mode === "light" ? "dark" : "light"
-              }`}
-            >
-              <input
                 onClick={() => props.toggleMode("dark")}
                 className="form-check-input"
                 type="checkbox"
