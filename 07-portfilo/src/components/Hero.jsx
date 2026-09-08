@@ -6,7 +6,7 @@ function Hero() {
           <p className="small-title">👋 Hello, I'm</p>
 
           <h1>
-            Yasir <span>Hamed</span>
+            Yasir <span>Ullah</span>
           </h1>
 
           <h2>Frontend Developer</h2>
@@ -27,11 +27,14 @@ function Hero() {
           </div>
 
           <div className="social-links">
-            <a href="https://github.com/" target="_blank">
+            <a href="https://github.com/Yasir-Ullah" target="_blank">
               GitHub
             </a>
 
-            <a href="https://www.linkedin.com/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/yasir-ullah-b101ba405/"
+              target="_blank"
+            >
               LinkedIn
             </a>
 
