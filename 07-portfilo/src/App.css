@@ -737,3 +737,130 @@ textarea {
     flex-wrap: wrap;
   }
 }
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
+.whatsapp-button {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 13px 20px;
+
+  background: #25d366;
+  color: #fff;
+
+  border-radius: 50px;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+
+  transition: 0.3s ease;
+}
+
+.whatsapp-button i {
+  font-size: 23px;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-4px);
+  background: #20bd5a;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .whatsapp-button {
+    right: 15px;
+    bottom: 15px;
+
+    width: 52px;
+    height: 52px;
+
+    padding: 0;
+
+    justify-content: center;
+  }
+
+  .whatsapp-button span {
+    display: none;
+  }
+
+  .whatsapp-button i {
+    font-size: 25px;
+  }
+}
+
+/* =========================
+   DOWNLOAD CV BUTTON
+========================= */
+
+.cv-button {
+  position: fixed;
+  right: 25px;
+  bottom: 90px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 13px 20px;
+
+  background: #111827;
+  color: #ffffff;
+
+  border-radius: 50px;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+
+  transition: 0.3s ease;
+}
+
+.cv-button i {
+  font-size: 17px;
+}
+
+.cv-button:hover {
+  transform: translateY(-4px);
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .cv-button {
+    right: 15px;
+    bottom: 80px;
+
+    width: 52px;
+    height: 52px;
+
+    padding: 0;
+
+    justify-content: center;
+  }
+
+  .cv-button span {
+    display: none;
+  }
+
+  .cv-button i {
+    font-size: 20px;
+  }
+}

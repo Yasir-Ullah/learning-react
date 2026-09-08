@@ -20,6 +20,26 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      {/* Download CV Button */}{" "}
+      <a
+        href="/Yasir-Hamed-CV.pdf"
+        download="Yasir-Hamed-CV.pdf"
+        className="cv-button"
+        aria-label="Download CV"
+      >
+        {" "}
+        <i className="fas fa-download"></i> <span>Download CV</span>{" "}
+      </a>
+      <a
+        href="https://wa.me/923001234567"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whatsapp-button"
+        aria-label="Contact me on WhatsApp"
+      >
+        <i className="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+      </a>
     </>
   );
 }
